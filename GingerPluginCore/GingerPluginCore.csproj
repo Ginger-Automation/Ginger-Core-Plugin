@@ -5,6 +5,7 @@
     <Company>amdocs</Company>
     <Authors>Ginger Automation Team</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Ginger.Plugin.Core</PackageId>
   </PropertyGroup>
 
 </Project>
