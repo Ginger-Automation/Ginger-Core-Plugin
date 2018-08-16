@@ -18,28 +18,27 @@ limitations under the License.
 
 using System;
 
-namespace GingerPlugInsNET.ActionsLib
+namespace Amdocs.Ginger.Plugin.Core
 {
-    public class GingerAction
+    public class GingerAction : IGingerAction
     {
-        public string ID { get; set; }
+        
+        public ActionOutput Output = new ActionOutput();
 
-        public ActionInputParams InputParams = new ActionInputParams();
 
-        public ActionOutput Output = new ActionOutput();        
-
-        public GingerAction(string Id)
-        {
-            ID = Id;
+        private string mExInfo;
+        public void AddExInfo(string info)
+        {            
+            if (!string.IsNullOrEmpty(mExInfo))
+            {
+                mErrors += Environment.NewLine;
+            }
+            mErrors += info;
         }
 
-        public string ExInfo { get; set; }
-
         // Keep it private so code must use AddError, and errors are added formatted
-        private string mErrors { get; set; }
-
-        // We can create better nice error
-        public void AddError(string source, string err)
+        private string mErrors { get; set; }        
+        public void AddError(string err)
         {
             // DateTime.Now  // add tomestamp
             if (!string.IsNullOrEmpty(mErrors))
@@ -50,7 +49,7 @@ namespace GingerPlugInsNET.ActionsLib
         }
 
         /// <summary>
-        /// Return errors all errors colelcted as string
+        /// Return errors all errors collected as string
         /// </summary>
         public string Errors
         {
@@ -58,6 +57,15 @@ namespace GingerPlugInsNET.ActionsLib
             {
                 return mErrors;
             }
+        }
+
+        public string Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+
+        public void AddOutput(string param, object value, string path = null)
+        {
+            // temp string !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            Output.Add(param, value.ToString() , path);
         }
     }
 }

@@ -18,7 +18,7 @@ limitations under the License.
 
 using System;
 
-namespace GingerPlugInsNET.PlugInsLib
+namespace  Amdocs.Ginger.Plugin.Core
 {
     // Annotation of [GingerAction] for function in driver we want to use as actions
     public class GingerActionAttribute : Attribute
@@ -26,15 +26,15 @@ namespace GingerPlugInsNET.PlugInsLib
         string mID;
         string mDescription;
 
-        // ID is kemp in the XML and should never changed!
+        // Id is kemt in the XML and should never changed!
         // Description is displayed to the user when he select action to add
-        public GingerActionAttribute(string ID, string Description)
+        public GingerActionAttribute(string Id, string Description)
         {
-            mID = ID;
+            mID = Id;
             mDescription = Description;
         }
 
-        public string ID {get {return mID; } set { mID = value; }  }
+        public string Id {get {return mID; } set { mID = value; }  }
         public string Description { get { return mDescription; } set { mDescription = value; } }
 
         public override string ToString()

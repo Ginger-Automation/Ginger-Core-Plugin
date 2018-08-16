@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GingerPluginCore\GingerPluginCore.csproj" />
+    <ProjectReference Include="..\PluginExample\PluginExample.csproj" />
   </ItemGroup>
 
 </Project>

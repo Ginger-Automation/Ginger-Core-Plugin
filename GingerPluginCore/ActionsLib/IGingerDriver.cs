@@ -17,10 +17,25 @@ limitations under the License.
 #endregion
 
 
-namespace GingerPlugInsNET.ActionsLib
-{
-    // Base Interface for all Driver Interface so we can use reflection to get all interfaces
-    public interface DriverInterfaceBase
+using System;
+using System.Collections.Generic;
+
+namespace  Amdocs.Ginger.Plugin.Core
+{    
+    public interface IGingerDriver
     {
+        /// <summary>
+        /// Setup all driver config param  - or do it with 
+        /// </summary>
+        // void Init();
+
+            // [GingerDriverInit]  ??? or params
+            // Init(int port, int host)
+
+        void Start();
+        void Stop();
+
+        // temp string
+        List<string> Platforms { get; }
     }
 }

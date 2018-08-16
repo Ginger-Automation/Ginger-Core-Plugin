@@ -17,7 +17,7 @@ limitations under the License.
 #endregion
 
 
-namespace GingerPlugInsNET.DriversLib
+namespace  Amdocs.Ginger.Plugin.Core.DriversLib
 {
     public interface IDriverDisplay 
     {

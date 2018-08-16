@@ -18,7 +18,7 @@ limitations under the License.
 
 using System;
 
-namespace GingerPlugInsNET.ActionsLib
+namespace  Amdocs.Ginger.Plugin.Core.ActionsLib
 {
     public class ActionParam
     {

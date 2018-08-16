@@ -16,10 +16,10 @@ limitations under the License.
 */
 #endregion
 
-namespace GingerPlugInsNET.TextEditorLib
+namespace  Amdocs.Ginger.Plugin.Core.TextEditorLib
 {
-    public class TextEditorToolBarItem
-    {
-        public string toolTip { get; set; }
-    }
+    //public class TextEditorToolBarItem
+    //{
+    //    public string toolTip { get; set; }
+    //}
 }

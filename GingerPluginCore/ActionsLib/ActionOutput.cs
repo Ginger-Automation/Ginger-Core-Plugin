@@ -20,7 +20,7 @@ limitations under the License.
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GingerPlugInsNET.ActionsLib
+namespace  Amdocs.Ginger.Plugin.Core
 {
     public class ActionOutput
     {

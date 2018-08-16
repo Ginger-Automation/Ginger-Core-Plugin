@@ -17,7 +17,7 @@ limitations under the License.
 #endregion
 
 
-namespace GingerPlugInsNET.ActionsLib
+namespace  Amdocs.Ginger.Plugin.Core.ActionsLib
 {
     public interface IStandAloneAction
     {
