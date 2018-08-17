@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>PluginExample2.GingerPlugin</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="MyTextEditorHighlighting.xshd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="MyTextEditorHighlighting.xshd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GingerPluginCore\GingerPluginCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Ginger.PluginPackage.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

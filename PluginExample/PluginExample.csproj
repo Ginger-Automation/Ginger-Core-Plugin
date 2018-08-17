@@ -9,15 +9,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="MyTextEditorHighlighting.xshd" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="MyTextEditorHighlighting.xshd" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\GingerPluginCore\GingerPluginCore.csproj" />
+    <ProjectReference Include="..\PluginExample2\PluginExample2.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="GingerCoreNET">
+      <HintPath>..\PluginExample2\GingerCoreNET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Ginger.PluginPackage.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="GingerCoreNET.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
