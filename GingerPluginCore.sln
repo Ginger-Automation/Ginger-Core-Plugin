@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GingerPluginCore", "GingerP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GingerPluginCoreTest", "GingerPluginCoreTest\GingerPluginCoreTest.csproj", "{E9BEC6CC-C594-44FE-BC23-5D3B026E465A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginExample", "PluginExample\PluginExample.csproj", "{BA2379CD-2452-4741-8657-1A6B66EF6DC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginExampleConsole", "PluginExample\PluginExampleConsole.csproj", "{BA2379CD-2452-4741-8657-1A6B66EF6DC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginExample2", "PluginExample2\PluginExample2.csproj", "{0DBAF513-4126-4EF0-A4DB-D94D43F98396}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginExample", "PluginExample2\PluginExample.csproj", "{0DBAF513-4126-4EF0-A4DB-D94D43F98396}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

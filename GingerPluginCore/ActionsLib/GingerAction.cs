@@ -20,10 +20,11 @@ using System;
 
 namespace Amdocs.Ginger.Plugin.Core
 {
+    // For Unit test class, when running from Ginger or using GingerCoreNET we use NodeGingerAction
     public class GingerAction : IGingerAction
     {
         
-        public ActionOutput Output = new ActionOutput();
+        // public NodeActionOutput Output = new NodeActionOutput();
 
 
         private string mExInfo;
@@ -64,8 +65,10 @@ namespace Amdocs.Ginger.Plugin.Core
 
         public void AddOutput(string param, object value, string path = null)
         {
+            //FIXME for unit test
+
             // temp string !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            Output.Add(param, value.ToString() , path);
+            // Output.Add(param, value.ToString() , path);
         }
     }
 }

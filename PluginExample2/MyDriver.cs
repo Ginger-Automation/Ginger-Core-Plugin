@@ -5,6 +5,7 @@ using System.Text;
 
 namespace PluginExample
 {
+    [GingerService("MyDriver", "My driver who can speak")]
     public class MyDriver : IGingerService, IGingerDriver
     {
         bool IsRunning = false;
@@ -22,7 +23,7 @@ namespace PluginExample
         }
 
         [GingerAction("Say", "Say text")]
-        public void Sum(IGingerAction GA, string text)
+        public void Say(IGingerAction GA, string text)
         {
             //In
             if (string.IsNullOrEmpty(text))

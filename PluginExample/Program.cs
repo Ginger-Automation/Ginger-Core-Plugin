@@ -1,5 +1,4 @@
 ﻿using Amdocs.Ginger.CoreNET.Drivers.CommunicationProtocol;
-using Amdocs.Ginger.Plugin.Core;
 using GingerCoreNET.DriversLib;
 using System;
 
@@ -21,9 +20,19 @@ namespace PluginExample
 
             GingerNode gingerNode = new GingerNode(new MyService());
             gingerNode.StartGingerNode("My Service 1", SocketHelper.GetLocalHostIP(), 15001);
+            
 
+            //gingerNode.GingerNodeMessage += GingerNode_GingerNodeMessage;
+
+
+            Console.ReadKey();
+
+            
         }
 
-
+        //private static void GingerNode_GingerNodeMessage(GingerNode gingerNode, GingerNode.eGingerNodeEventType GingerNodeEventType)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
