@@ -1,4 +1,5 @@
 ﻿using Amdocs.Ginger.CoreNET.Drivers.CommunicationProtocol;
+using Amdocs.Ginger.Plugin.Core;
 using GingerCoreNET.DriversLib;
 using System;
 
@@ -8,21 +9,23 @@ namespace PluginExample
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
-            //TODO: connect to grid
-
-
-            // test on differnt OS
-            //MyService myService = new MyService();
-            //GingerAction GA = new GingerAction();
-            //myService.Sum(GA, 5, 4);
-
+            Console.WriteLine("Starting MyService");
+            
             GingerNode gingerNode = new GingerNode(new MyService());
             gingerNode.StartGingerNode("My Service 1", SocketHelper.GetLocalHostIP(), 15001);
-            
 
-            //gingerNode.GingerNodeMessage += GingerNode_GingerNodeMessage;
+            GingerNode gingerNode2 = new GingerNode(new MyService());
+            gingerNode2.StartGingerNode("My Service 2", SocketHelper.GetLocalHostIP(), 15001);
+
+            GingerNode gingerNode3 = new GingerNode(new MyService());
+            gingerNode3.StartGingerNode("My Service 3", SocketHelper.GetLocalHostIP(), 15001);
+
+            GingerNode gingerNode4 = new GingerNode(new MyDriver());
+            gingerNode4.StartGingerNode("My Driver 1", SocketHelper.GetLocalHostIP(), 15001);
+
+
+            //TODO: run seveal on threads
+            // Run several on different process
 
 
             Console.ReadKey();
@@ -30,9 +33,5 @@ namespace PluginExample
             
         }
 
-        //private static void GingerNode_GingerNodeMessage(GingerNode gingerNode, GingerNode.eGingerNodeEventType GingerNodeEventType)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

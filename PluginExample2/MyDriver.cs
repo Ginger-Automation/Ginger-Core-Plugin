@@ -15,11 +15,13 @@ namespace PluginExample
         public void Start()
         {
             IsRunning = true;
+            Console.WriteLine("I started talking");
         }
 
         public void Stop()
         {
             IsRunning = false;
+            Console.WriteLine("Going to sleep");
         }
 
         [GingerAction("Say", "Say text")]
