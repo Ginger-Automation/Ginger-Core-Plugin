@@ -6,9 +6,9 @@ namespace Amdocs.Ginger.Plugin.Core
 {
     public interface ITextEditorToolBarItem
     {        
-        string Text { get; }
-        string toolTip { get;  }
-
-        void Execute();
+        string ToolText { get; }
+        string ToolTip { get; }
+        //string Image { get; }
+        void Execute(ITextEditor textEditor);        
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PluginExample;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GingerPluginCoreTest
 {
@@ -46,7 +47,7 @@ namespace GingerPluginCoreTest
             ITextEditorToolBarItem savetool = tools[0];
 
             //assert
-            Assert.AreEqual("Save",savetool.Text, "tool text");            
+            Assert.AreEqual("Save",savetool.ToolText, "tool text");            
         }
 
         [TestMethod]
@@ -54,11 +55,10 @@ namespace GingerPluginCoreTest
         {
             //Arrange
             ITextEditor myTextEditor = new MyTextEditor();
-            List<ITextEditorToolBarItem> tools = myTextEditor.Tools;
-            ITextEditorToolBarItem savetool = tools[0];
+            ITextEditorToolBarItem savetool = (from x in myTextEditor.Tools where x.ToolText == "Save" select x).SingleOrDefault();            
 
             //Act
-            savetool.Execute();
+            savetool.Execute(myTextEditor);
             bool isSaved = ((MyTextEditor)myTextEditor).IsSaved;
 
             //assert
@@ -80,5 +80,34 @@ namespace GingerPluginCoreTest
             Assert.IsTrue(txt.StartsWith("<?xml version=") , "Highlighting from resource");
         }
 
+
+        [TestMethod]
+        public void ToolChangeText()
+        {
+            //Arrange
+            ITextEditor myTextEditor = new MyTextEditor();
+            myTextEditor.Text = "ABC";
+            ITextEditorToolBarItem lowerCaseTool = (from x in myTextEditor.Tools where x.ToolText == "Lower Case" select x).SingleOrDefault();
+
+            //Act
+            lowerCaseTool.Execute(myTextEditor);            
+
+            //assert
+            Assert.AreEqual("abc", myTextEditor.Text , "Tool activated and changed editor text");
+        }
+
+        [TestMethod]
+        public void ToolMessage()
+        {
+            //Arrange
+            ITextEditor myTextEditor = new MyTextEditor();
+
+            //Act
+            myTextEditor.ShowMessage(Amdocs.Ginger.Plugin.Core.TextEditorLib.MessageType.Error, "Error Occured");
+
+            //assert
+            //??
+            // Assert.AreEqual("abc", myTextEditor., "Tool activated and changed editor text");
+        }
     }
 }

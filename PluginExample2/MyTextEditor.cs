@@ -1,12 +1,11 @@
 ﻿using Amdocs.Ginger.Plugin.Core;
-using PluginExample;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
 namespace PluginExample
 {
+    // Sample implemntation of ITextEditor for unit tests
     public class MyTextEditor : ITextEditor
     {
         // to test the tool 'Save' worked - check Execute
@@ -15,7 +14,10 @@ namespace PluginExample
         string ITextEditor.Name { get { return "My Text Editor"; } }
 
         List<string> ITextEditor.Extensions { get { return new List<string>() { "txt", "csv", "json" }; } }
-        
+
+        public MessageType MessageType;
+        public string MessageText;
+
         public byte[] HighlightingDefinition
         {
             get
@@ -35,13 +37,28 @@ namespace PluginExample
             }
         }
 
+        
+
+        public void ShowMessage(MessageType messageType, string text)
+        {
+            MessageType = messageType;
+            MessageText = text;
+        }
+
         public List<ITextEditorToolBarItem> Tools { get {
                 List<ITextEditorToolBarItem> tools = new List<ITextEditorToolBarItem>();
-                tools.Add(new SaveTool() { myTextEditor = this});
+                tools.Add(new SaveTool());
+                tools.Add(new LowerCaseTool());
+                
                 return tools;
             } }
 
         public IFoldingStrategy FoldingStrategy { get { return new MyFoldingStrategy();  } }
+
+        string mText;
+        public string Text { get { return mText; } set { mText = value; } }
+
+        public int CaretLocation { get { return mText.Length ;  } }
     }    
 }
 
@@ -51,16 +68,3 @@ class MyFoldingStrategy : IFoldingStrategy
 }
 
 
-class SaveTool : ITextEditorToolBarItem
-{
-    public MyTextEditor myTextEditor { get; set; }
-
-    public string Text { get { return "Save"; }  }
-
-    public string toolTip { get { return "Save to file system"; }  }    
-
-    public void Execute()
-    {
-        myTextEditor.IsSaved = true;
-    }    
-}
