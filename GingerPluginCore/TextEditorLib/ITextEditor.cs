@@ -1,7 +1,4 @@
-﻿using Amdocs.Ginger.Plugin.Core.TextEditorLib;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Amdocs.Ginger.Plugin.Core
 {

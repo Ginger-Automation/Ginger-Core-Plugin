@@ -7,18 +7,7 @@ namespace GingerPluginCoreTest
     [TestClass]
     public class MyServiceTest
     {
-        //[TestMethod]
-        //public void CheckName()
-        //{
-        //    //Arrange
-        //    MyService ServicePlugin = new MyService();
-
-        //    //Act
-        //    string name = ServicePlugin.Name;
-
-        //    //assert
-        //    Assert.AreEqual("My Service", name, "Service name");
-        //}
+       
 
         [TestMethod]
         public void StartDriver()

@@ -103,11 +103,11 @@ namespace GingerPluginCoreTest
             ITextEditor myTextEditor = new MyTextEditor();
 
             //Act
-            myTextEditor.ShowMessage(Amdocs.Ginger.Plugin.Core.TextEditorLib.MessageType.Error, "Error Occured");
+            myTextEditor.ShowMessage(MessageType.Error, "Error Occured");
 
-            //assert
-            //??
-            // Assert.AreEqual("abc", myTextEditor., "Tool activated and changed editor text");
+            //assert            
+            Assert.AreEqual(MessageType.Error, ((MyTextEditor)myTextEditor).MessageType, "Error Message type");
+            Assert.AreEqual("Error Occured", ((MyTextEditor)myTextEditor).MessageText , "Error Message type text");            
         }
     }
 }
