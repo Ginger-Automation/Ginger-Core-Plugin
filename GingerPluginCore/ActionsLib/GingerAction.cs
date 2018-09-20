@@ -26,15 +26,17 @@ namespace Amdocs.Ginger.Plugin.Core
         
         // public NodeActionOutput Output = new NodeActionOutput();
 
-
         private string mExInfo;
         public void AddExInfo(string info)
-        {            
-            if (!string.IsNullOrEmpty(mExInfo))
+        {
+            if (string.IsNullOrEmpty(mExInfo))
             {
-                mErrors += Environment.NewLine;
+                mExInfo = "";
             }
-            mErrors += info;
+            else
+            {
+                mExInfo += info;
+            }
         }
 
         // Keep it private so code must use AddError, and errors are added formatted
@@ -61,7 +63,6 @@ namespace Amdocs.Ginger.Plugin.Core
         }
 
         public string Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
 
         public void AddOutput(string param, object value, string path = null)
         {
