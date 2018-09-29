@@ -15,8 +15,10 @@ namespace PluginExample
 
         List<string> ITextEditor.Extensions { get { return new List<string>() { "txt", "csv", "json" }; } }
 
-        public MessageType MessageType;
-        public string MessageText;
+        
+
+        //public MessageType MessageType;
+        //public string MessageText;
 
         public byte[] HighlightingDefinition
         {
@@ -37,14 +39,17 @@ namespace PluginExample
             }
         }
 
+
+
+        // public void ShowMessage(MessageType messageType, string text)
+        //{
+        //    MessageType = messageType;
+        //    MessageText = text;
+        //}
+
         
-
-        public void ShowMessage(MessageType messageType, string text)
-        {
-            MessageType = messageType;
-            MessageText = text;
-        }
-
+        
+            // Add the tools 
         public List<ITextEditorToolBarItem> Tools { get {
                 List<ITextEditorToolBarItem> tools = new List<ITextEditorToolBarItem>();
                 tools.Add(new SaveTool());
@@ -55,10 +60,13 @@ namespace PluginExample
 
         public IFoldingStrategy FoldingStrategy { get { return new MyFoldingStrategy();  } }
 
-        string mText;
-        public string Text { get { return mText; } set { mText = value; } }
+        ITextHandler mTextHandler;
+        public ITextHandler TextHandler { get { return mTextHandler; } set { mTextHandler = value; } }
 
-        public int CaretLocation { get { return mText.Length ;  } }
+        //string mText;
+        //public string Text { get { return mText; } set { mText = value; } }
+
+        //public int CaretLocation { get { return mText.Length ;  } }
     }    
 }
 

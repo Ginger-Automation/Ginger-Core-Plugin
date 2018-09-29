@@ -21,11 +21,14 @@ namespace Amdocs.Ginger.Plugin.Core
 
         IFoldingStrategy FoldingStrategy { get; }
 
-        string Text { get; set; }
 
-        int CaretLocation { get; }
+        // Will be set by Ginger with ITextHandler impl
+        ITextHandler TextHandler { get; set; }
+        //string Text { get; set; }
 
-        void ShowMessage(MessageType messageType, string text);
+        //int CaretLocation { get; }
+
+        // void ShowMessage(MessageType messageType, string text);
 
     }
 }

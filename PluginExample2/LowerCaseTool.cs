@@ -13,7 +13,7 @@ namespace PluginExample
 
         public void Execute(ITextEditor TextEditor)
         {
-            TextEditor.Text = TextEditor.Text.ToLower();
+            TextEditor.TextHandler.Text = TextEditor.TextHandler.Text.ToLower();
         }
     }
 }

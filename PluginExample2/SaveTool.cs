@@ -17,7 +17,7 @@ namespace PluginExample
         {
             MyTextEditor myTextEditor = (MyTextEditor)textEditor;
             myTextEditor.IsSaved = true;
-            myTextEditor.ShowMessage(MessageType.Info, "Saved");
+            myTextEditor.TextHandler.ShowMessage(MessageType.Info, "Saved");
         }
     }
 }
