@@ -17,24 +17,28 @@ limitations under the License.
 #endregion
 
 using System;
+using System.Collections.Generic;
 
 namespace Amdocs.Ginger.Plugin.Core
 {
     // For Unit test class, when running from Ginger or using GingerCoreNET we use NodeGingerAction
     public class GingerAction : IGingerAction
     {
-        
-        // public NodeActionOutput Output = new NodeActionOutput();
 
+        // public NodeActionOutput Output = new NodeActionOutput();
+        List<GingerActionOutput> gingerActionOutputList = new List<GingerActionOutput>();
 
         private string mExInfo;
         public void AddExInfo(string info)
-        {            
-            if (!string.IsNullOrEmpty(mExInfo))
+        {
+            if (string.IsNullOrEmpty(mExInfo))
             {
-                mErrors += Environment.NewLine;
+                mExInfo = "";
             }
-            mErrors += info;
+            else
+            {
+                mExInfo += info;
+            }
         }
 
         // Keep it private so code must use AddError, and errors are added formatted
@@ -62,13 +66,40 @@ namespace Amdocs.Ginger.Plugin.Core
 
         public string Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-
         public void AddOutput(string param, object value, string path = null)
         {
             //FIXME for unit test
 
             // temp string !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             // Output.Add(param, value.ToString() , path);
+
+            GingerActionOutput gingerActionOutput = new GingerActionOutput();
+            gingerActionOutput.ParamName = param;
+            gingerActionOutput.ParamValue = value.ToString();
+
+            gingerActionOutputList.Add(gingerActionOutput);
         }
+
+        public string GetOutputValue(string paramName)
+        {
+            // no items in the list
+            if (gingerActionOutputList.Count == 0)
+            {
+                return null;
+            }
+
+            // find the item
+            GingerActionOutput gingerActionOutput = gingerActionOutputList.Find(x => x.ParamName.Equals(paramName));
+
+            // if item is not found
+            if (gingerActionOutput == null)
+            {
+                return null;
+            }
+
+            return gingerActionOutput.ParamValue;
+        }
+
+
     }
 }
