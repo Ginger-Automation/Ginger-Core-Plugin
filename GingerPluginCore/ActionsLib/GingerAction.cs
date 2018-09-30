@@ -31,14 +31,11 @@ namespace Amdocs.Ginger.Plugin.Core
         private string mExInfo;
         public void AddExInfo(string info)
         {
-            if (string.IsNullOrEmpty(mExInfo))
+            if (!string.IsNullOrEmpty(mExInfo))
             {
-                mExInfo = "";
+                mErrors += Environment.NewLine;
             }
-            else
-            {
-                mExInfo += info;
-            }
+            mErrors += info;
         }
 
         // Keep it private so code must use AddError, and errors are added formatted
