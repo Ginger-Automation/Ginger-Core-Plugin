@@ -10,4 +10,10 @@
     <RootNamespace>Amdocs.Ginger.Plugin.Core</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="GingerCoreNET">
+      <HintPath>..\PluginExample\GingerCoreNET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
