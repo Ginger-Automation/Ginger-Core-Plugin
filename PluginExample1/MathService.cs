@@ -29,7 +29,7 @@ namespace PluginExample1
         }
 
         [GingerAction("Divide", "Divide two numbers")]
-        public void Divide(IGingerAction GA, int a, int b)
+        public void Divide(IGingerAction GA, int a, int b)   // convert to decimal
         {
             //In
             if (b == 0)
@@ -39,12 +39,12 @@ namespace PluginExample1
             }
 
             //Act
-            int total = a + b;
+            int result = a / b;
 
             //Out
             GA.AddOutput("a", a);
             GA.AddOutput("b", b);
-            GA.AddOutput("Sum", total);
+            GA.AddOutput("Result", result);
         }
 
 

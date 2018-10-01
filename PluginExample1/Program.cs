@@ -10,6 +10,8 @@ namespace PluginExample1
             Console.WriteLine("Starting Plugin Exmaple 1");
             GingerNodeStarter.StartNode(new MathService(), "Math Service 1");
 
+            GingerNodeStarter.StartNode(new StringService(), "String Service 1");
+
             // GingerNodeStarter.StartNode(new StringService(), "String Service 1");
 
             //GingerNodeStarter.StartNode(typeof(MathService),"localhost", 15001);
