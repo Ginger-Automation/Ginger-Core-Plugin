@@ -5,7 +5,7 @@ using PluginExample1;
 namespace PluginExample1Test
 {
     [TestClass]
-    public class UnitTest1
+    public class MathServiceTest
     {
         [TestMethod]
         public void RunAction()
@@ -19,10 +19,10 @@ namespace PluginExample1Test
 
             //assert
             Assert.AreEqual(null, GA.Errors, "Errors=null");
-            //Assert.AreEqual(GA.Output["a"], "2", "a");
-            //Assert.AreEqual(GA.Output["b"], "3", "b");
-            //Assert.AreEqual(GA.Output["Total"], "5", "output Total");
-            // Assert.AreEqual(GA.ExInfo .Output["a"], "2", "a");
+            Assert.AreEqual(2, GA.Output["a"],  "a");
+            Assert.AreEqual(3, GA.Output["b"],  "b");
+            Assert.AreEqual(5, GA.Output["Total"],  "output Total");
+            Assert.AreEqual("2+3=5", GA.ExInfo , "ExInfo");
         }
     }
 }
