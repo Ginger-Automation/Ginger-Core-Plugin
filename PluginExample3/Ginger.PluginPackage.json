@@ -1,0 +1,8 @@
+{
+  "Id": "PluginExample3",
+  "Version": "1.0.0",
+  "ProjectUrl": "git\\Pluginex3...",
+  "Description": "Example3",
+  "Summary": "Text File services",
+  "StartupDll": "PluginExample3.dll"
+}

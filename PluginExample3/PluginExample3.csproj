@@ -3,20 +3,10 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <AssemblyName>PluginExampleConsole</AssemblyName>
-    <ApplicationIcon />
-    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\GingerPluginCore\GingerPluginCore.csproj" />
-    <ProjectReference Include="..\PluginExample2\PluginExample.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="GingerCoreNET">
-      <HintPath>bin\Debug\netcoreapp2.1\GingerCoreNET.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>
