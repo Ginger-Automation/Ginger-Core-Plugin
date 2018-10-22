@@ -46,5 +46,41 @@ namespace PluginExample1
         }
 
 
+        [GingerAction("ConcatList", "Concat List of strings")]
+        public void ConcatList(IGingerAction GA, string delimiter, List<string> list)
+        {
+            Console.WriteLine(DateTime.Now + "> ConcatList: contains" + list.Count + " strings");
+            //In
+
+            //Act
+            string txt = "";
+            foreach (string s in list)
+            {
+                if (txt.Length > 0) txt += delimiter;
+                txt += s;
+            }
+
+            //Out
+            GA.AddOutput("txt", txt);                        
+        }
+
+        [GingerAction("ConcatListItems", "Concat List of items")]
+        public void ConcatListItems(IGingerAction GA, string delimiter, List<ListItem> list)
+        {
+            Console.WriteLine(DateTime.Now + "> ConcatList: contains" + list.Count + " strings");
+            //In
+
+            //Act
+            string txt = "";
+            foreach (ListItem item in list)
+            {
+                if (txt.Length > 0) txt += Environment.NewLine;
+                txt += item.Key + delimiter + item.Value;
+            }
+
+            //Out
+            GA.AddOutput("txt", txt);
+        }
+
     }
 }
