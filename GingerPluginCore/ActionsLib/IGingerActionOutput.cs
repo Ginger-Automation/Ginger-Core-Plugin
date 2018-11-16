@@ -6,7 +6,6 @@ namespace Amdocs.Ginger.Plugin.Core
 {
     public interface IGingerActionOutput
     {
-        List<IGingerActionOutputValue> OutputValues { get; set; }
-        
+        List<IGingerActionOutputValue> OutputValues { get; set; }        
     }
 }

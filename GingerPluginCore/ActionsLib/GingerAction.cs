@@ -46,8 +46,7 @@ namespace Amdocs.Ginger.Plugin.Core
         // Keep it private so code must use AddError, and errors are added formatted
         private string mErrors { get; set; }        
         public void AddError(string err)
-        {
-            // DateTime.Now  // add tomestamp
+        {            
             if (!string.IsNullOrEmpty(mErrors))
             {
                 mErrors += Environment.NewLine;

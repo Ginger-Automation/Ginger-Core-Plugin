@@ -8,7 +8,7 @@ using System.Threading;
 namespace PluginExample1
 {
     [GingerService("StringService", "String service")]
-    public class StringService : IGingerService
+    public class StringService 
     {
        
         [GingerAction("Concat", "Concat two string")]

@@ -23,18 +23,18 @@ namespace  Amdocs.Ginger.Plugin.Core
     // Annotation of [GingerAction] for function in driver we want to use as actions
     public class GingerActionAttribute : Attribute
     {
-        string mID;
+        string mId;
         string mDescription;
 
-        // Id is kemt in the XML and should never changed!
-        // Description is displayed to the user when he select action to add
-        public GingerActionAttribute(string Id, string Description)
+        // Id is kept in the XML and should never change!
+        // Description is displayed to the user when one select action to add
+        public GingerActionAttribute(string Id, string description)
         {
-            mID = Id;
-            mDescription = Description;
+            mId = Id;
+            mDescription = description;
         }
 
-        public string Id {get {return mID; } set { mID = value; }  }
+        public string Id {get {return mId; } set { mId = value; }  }
         public string Description { get { return mDescription; } set { mDescription = value; } }
 
         public override string ToString()

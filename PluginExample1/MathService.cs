@@ -8,7 +8,7 @@ using System.Threading;
 namespace PluginExample1
 {
     [GingerService("MathService", "Math service")]
-    public class MathService : IGingerService
+    public class MathService 
     {
        
         [GingerAction("Sum", "Sum two numbers")]

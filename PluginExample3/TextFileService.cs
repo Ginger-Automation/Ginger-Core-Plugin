@@ -6,10 +6,10 @@ using System.Text;
 namespace PluginExample3
 {
     [GingerService("TextFileService", "Text File service")]
-    public class TextFileService : IGingerService
+    public class TextFileService 
     {
         [GingerAction("WordsCount", "Count number of words in text file")]
-        public void Sum(IGingerAction GA, string fileName)
+        public void WordsCount(IGingerAction GA, string fileName)
         {            
             //In
             if (!System.IO.File.Exists(fileName))
