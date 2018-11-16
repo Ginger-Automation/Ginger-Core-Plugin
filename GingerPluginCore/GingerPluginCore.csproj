@@ -6,7 +6,7 @@
     <Authors>Ginger Automation Team</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Ginger.Plugin.Core</PackageId>
-    <Version>2.6.6</Version>
+    <Version>3.0.0</Version>
     <RootNamespace>Amdocs.Ginger.Plugin.Core</RootNamespace>
   </PropertyGroup>
 
