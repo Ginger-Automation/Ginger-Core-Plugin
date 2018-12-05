@@ -29,7 +29,7 @@ namespace Amdocs.Ginger.Plugin.Core
             mNodes.Add(gingerNode);            
         }
 
-        public void Wait()
+        public void Listen()
         {
             Console.WriteLine("Press any key to close");
             Console.ReadKey();

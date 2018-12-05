@@ -17,11 +17,13 @@ namespace PluginDriverExample4
             // GingerNodeStarter.StartNode(new MyDriver(), "MyDriver Service 1", "10.122.112.124",15001);
             using (GingerNodeStarter gingerNodeStarter = new GingerNodeStarter())
             {
-                gingerNodeStarter.StartNode(new MyDriver(), "MyDriver Service 1");
+               //  gingerNodeStarter.StartNode("Dictionary Service 1", new DictionaryService());
+                gingerNodeStarter.StartNode("Speech Service 1", new SpeechService());
+
+                gingerNodeStarter.Listen();                
             }
                 
-
-            Console.ReadKey();
+            
         }
     }
 }

@@ -17,9 +17,11 @@ namespace PluginExample1
                     gingerNodeStarter.StartFromConfigFile(args[0]);  // file name 
                 }
                 else
-                {                
-                    gingerNodeStarter.StartNode("Math Service A", new MathService(), "10.122.112.124", 15001);
+                {
+                    // gingerNodeStarter.StartNode("Math Service A", new MathService(), "10.122.112.124", 15001);
+                    gingerNodeStarter.StartNode("Math Service A", new MathService());
                     gingerNodeStarter.StartNode("Math Service B", new MathService());
+                    gingerNodeStarter.StartNode("Math Service C", new MathService());
 
                     // file content options
                     // i.e.:
@@ -28,7 +30,7 @@ namespace PluginExample1
                     // Math 2 | PluginExample1.MathService | 10.122.112.124 | 15001
                     // gingerNodeStarter.StartFromConfigFile(@"C:\temp\GingerNodeStarter\SeleneniumChromeFF.txt");
                 }
-                gingerNodeStarter.Wait();
+                gingerNodeStarter.Listen();
             }                        
             
         }
