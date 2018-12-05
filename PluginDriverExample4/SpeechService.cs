@@ -27,5 +27,27 @@ namespace PluginDriverExample4
             //Out
             GA.AddOutput("I said", text, "myPath");
         }
+
+        [GingerAction("SayHello", "Say Hello {Name}")]
+        public void SayHello(IGingerAction GA, string name, bool greeting)
+        {
+            //In
+            if (string.IsNullOrEmpty(name))
+            {
+                GA.AddError("Name cannot be empty");
+                return;
+            }
+
+            //Act
+            Console.WriteLine("I Say Hello to: " + name);
+            if (greeting)
+            {
+                Console.WriteLine("Have a wonderful day");
+            }
+
+            //Out
+            GA.AddOutput("I said", name);
+        }
+
     }
 }
