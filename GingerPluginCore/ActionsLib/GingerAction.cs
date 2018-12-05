@@ -52,6 +52,8 @@ namespace Amdocs.Ginger.Plugin.Core
                 mErrors += Environment.NewLine;
             }
             mErrors += err;
+
+            Log(err, LogLevel.Error);
         }
 
         /// <summary>
@@ -87,6 +89,26 @@ namespace Amdocs.Ginger.Plugin.Core
             Output.OutputValues.Add(gingerActionOutputValue);
         }
 
+        public void Log(string text, LogLevel logLevel = LogLevel.Info)
+        {
+            switch (logLevel)
+            {
+                case LogLevel.Info:
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    break;
+                case LogLevel.Debug:
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    break;
+                case LogLevel.Error:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    break;
+            }
+            
+            Console.WriteLine(DateTime.Now + ": " + logLevel + " " + text);
 
+            //Back to white
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        
     }
 }
