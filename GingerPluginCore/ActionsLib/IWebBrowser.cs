@@ -17,11 +17,29 @@
 //#endregion
 
 
-//namespace  Amdocs.Ginger.Plugin.Core.ActionsLib
-//{
-//    public interface IWebBrowser : DriverInterfaceBase
-//    {
-//        void Navigate(GingerAction gingerAction, string URL);
-//        void Submit(GingerAction gingerAction);
-//    }
-//}
+namespace Amdocs.Ginger.Plugin.Core
+{
+    [GingerInterface("WebBrowser", "Web Browser Automation")]
+    public interface IWebBrowser 
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="gingerAction"></param>
+        /// <param name="URL"></param>
+        /// Output: 
+        /// Param | Value
+        /// URL   | http://www.zzz
+        [GingerAction("Navigate", "Navigate to URL")]
+        void Navigate(IGingerAction gingerAction, string URL);
+
+
+        /// <summary>
+        /// Define what is the output expected
+        /// gingerAction.AddOutput("submit","aaa")
+        /// </summary>
+        /// <param name="gingerAction"></param>
+        [GingerAction("Submit", "Submit the page")]
+        void Submit(IGingerAction gingerAction);
+    }
+}

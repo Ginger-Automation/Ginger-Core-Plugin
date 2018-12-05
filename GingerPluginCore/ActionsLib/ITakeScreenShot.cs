@@ -16,21 +16,21 @@
 //*/
 //#endregion
 
-//using Amdocs.Ginger.Plugin.Core.ActionsLib;
-//using System.Collections.Generic;
 
-//namespace Amdocs.Ginger.Plugin
-//{
-//    public enum eScreens
-//    {
-//        Active,
-//        All,
-//        Desktop
-//    }
+namespace Amdocs.Ginger.Plugin.Core
+{
+    public enum eScreens
+    {
+        Active,
+        All,
+        Desktop
+    }
 
-//    public interface ITakeScreenShot 
-//    {
-//        List<eScreens> SupportedScreens();
-//        void TakeScreenShot(GingerAction gingerAction, eScreens screens);
-//    }
-//}
+
+    
+    public interface ITakeScreenShot
+    {
+        [GingerAction("TakeScreenShot", "Take Screen Shot")]
+        void TakeScreenShot(IGingerAction gingerAction, eScreens screens);
+    }
+}

@@ -16,37 +16,38 @@
 //*/
 //#endregion
 
-//namespace  Amdocs.Ginger.Plugin.Core.ActionsLib
-//{
+namespace Amdocs.Ginger.Plugin.Core
+{
 
-//    public enum eElementType
-//    {
-//        TextBox,
-//        ComboBox,
-//        Button
-//        //TDDO: add all the rest
-//        // do not put grid
-//    }
+    public enum eElementType
+    {
+        TextBox,
+        ComboBox,
+        Button
+        //TDDO: add all the rest
+        // do not put grid
+    }
 
-//    public enum eLocateBy
-//    {
-//        Id,
-//        Name,
-//        XPath,
-//        Text
-//        //TDDO: add all the rest
-//    }
+    public enum eLocateBy
+    {
+        Id,
+        Name,
+        XPath,
+        Text
+        //TDDO: add all the rest
+    }
 
-//    public enum eElementAction
-//    {
-//        Click,
-//        SetValue,
-//        GetValue
-//        //TDDO: add all the rest
-//    }
+    public enum eElementAction
+    {
+        Click,
+        SetValue,
+        GetValue
+        //TDDO: add all the rest
+    }
 
-//    public interface IUIElementAction : DriverInterfaceBase
-//    {        
-//        void UIElementAction(GingerAction gingerAction, eElementType elementType, eLocateBy locateBy, string locateValue, eElementAction elementAction, string value = null);        
-//    }
-//}
+    [GingerInterface("IUIElementAction", "UI Element Action")]
+    public interface IUIElementAction 
+    {
+        void UIElementAction(GingerAction gingerAction, eElementType elementType, eLocateBy locateBy, string locateValue, eElementAction elementAction, string value = null);
+    }
+}

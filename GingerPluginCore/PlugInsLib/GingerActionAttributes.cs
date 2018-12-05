@@ -26,8 +26,11 @@ namespace  Amdocs.Ginger.Plugin.Core
         string mId;
         string mDescription;
 
-        // Id is kept in the XML and should never change!
-        // Description is displayed to the user when one select action to add
+        /// <summary>
+        /// Define the method Ginger action
+        /// </summary>
+        /// <param name="Id">Action Id is kept in the XML and should never change</param>
+        /// <param name="Description">Description is displayed to the user when he select action to add</param>
         public GingerActionAttribute(string Id, string description)
         {
             mId = Id;

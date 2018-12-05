@@ -17,12 +17,17 @@ limitations under the License.
 #endregion
 
 
-namespace Amdocs.Ginger.Plugin.Core
-{
-    [GingerInterface("IBrowser", "Record user actions")]
-    public interface IRecord
-    {
-        void StartRecording();
-        void StopRecording();
+using System;
+using System.Collections.Generic;
+
+namespace  Amdocs.Ginger.Plugin.Core
+{    
+    /// <summary>
+    /// Service which require a session 
+    /// </summary>
+    public interface IServiceSession
+    {        
+        void StartSession();
+        void StopSession();
     }
 }

@@ -4,17 +4,17 @@ using System.Text;
 
 namespace Amdocs.Ginger.Plugin.Core
 {
-    public class GingerServiceAttribute : Attribute
+    public class GingerInterfaceAttribute : Attribute
     {
         string mID;
         string mDescription;
 
         /// <summary>
-        /// Define the class as Ginger service
+        /// Define the interace as Ginger service/actions interface
         /// </summary>
         /// <param name="Id">Service Id is kept in the XML and should never change</param>
         /// <param name="Description">Description is displayed to the user when he select Service</param>
-        public GingerServiceAttribute(string Id, string Description)
+        public GingerInterfaceAttribute(string Id, string Description)
         {
             mID = Id;
             mDescription = Description;
@@ -25,7 +25,7 @@ namespace Amdocs.Ginger.Plugin.Core
 
         public override string ToString()
         {
-            return "GingerService";
+            return "GingerInterface";
         }
     }
 }
