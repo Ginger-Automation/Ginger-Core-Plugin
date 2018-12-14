@@ -72,39 +72,39 @@ namespace Amdocs.Ginger.Plugin.Core
             StartNode(name, serviceObject, gingerGridIP, gingerGridport);            
         }
 
-        Type GetServiceType(string typeName)
+        public object CreateServiceObjectByServiceId(string serviceId)
         {
+            Console.WriteLine("Creating Service object for Service Id: " + serviceId);
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            foreach (Assembly asm in assemblies)
+            foreach (Assembly asssembly in assemblies)
             {
-                try
+                IEnumerable<Type> types = from x in asssembly.GetTypes() where x.GetCustomAttribute(typeof(GingerServiceAttribute)) != null select x;
+                foreach (Type type in types)
                 {
-                    Type t = (from x in asm.GetTypes() where x.FullName == typeName select x).SingleOrDefault();
-
-                    if (t != null)
+                    GingerServiceAttribute gingerServiceAttribute = (GingerServiceAttribute)Attribute.GetCustomAttribute(type, typeof(GingerServiceAttribute), false);
+                    if (gingerServiceAttribute.Id == serviceId)
                     {
-                        return t;
+                        Console.WriteLine("Found service class, full name =  " + type.FullName);
+                        object obj = Activator.CreateInstance(type);
+                        Console.WriteLine("Service class created successfully");
+                        return obj;
                     }
                 }
-                catch
-                {
-                    // cont to next assembly
-                }
             }
-            return null;
+            Console.WriteLine("GetServiceType failed for Service Id: " + serviceId);
+            throw new Exception("Error: Cannot find class type to create for Service Id: " + serviceId);
         }
+  
 
-        public void StartNode(string name, string serviceTypeName)
+        public void StartNode(string name, string serviceId)
         {            
-            Type t = GetServiceType(serviceTypeName);            
-            object serviceObject = Activator.CreateInstance(t);
+            object serviceObject = CreateServiceObjectByServiceId(serviceId); 
             StartNode(name, serviceObject);                                                 
         }
 
-        public void StartNode(string name, string serviceTypeName, string gingerGridIP, int gingerGridport)
-        {
-            Type t = GetServiceType(serviceTypeName);
-            object serviceObject = Activator.CreateInstance(t);            
+        public void StartNode(string name, string serviceId, string gingerGridIP, int gingerGridport)
+        {            
+            object serviceObject = CreateServiceObjectByServiceId(serviceId);
             StartNode(name, serviceObject, gingerGridIP, gingerGridport);
         }
 
