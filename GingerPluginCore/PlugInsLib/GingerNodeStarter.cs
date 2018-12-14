@@ -94,7 +94,7 @@ namespace Amdocs.Ginger.Plugin.Core
             return null;
         }
 
-        public void StartNode(string serviceTypeName, string name)
+        public void StartNode(string name, string serviceTypeName)
         {            
             Type t = GetServiceType(serviceTypeName);            
             object serviceObject = Activator.CreateInstance(t);
