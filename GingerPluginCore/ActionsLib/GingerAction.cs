@@ -86,6 +86,7 @@ namespace Amdocs.Ginger.Plugin.Core
             GingerActionOutputValue gingerActionOutputValue = new GingerActionOutputValue();
             gingerActionOutputValue.Param = param;
             gingerActionOutputValue.Value = value;
+            gingerActionOutputValue.Path = path;
             Output.OutputValues.Add(gingerActionOutputValue);
         }
 
