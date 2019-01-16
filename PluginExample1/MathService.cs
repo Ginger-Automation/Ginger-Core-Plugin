@@ -9,7 +9,7 @@ using System.Threading;
 
 namespace PluginExample1
 {
-    [GingerService("MathService", "Math service")]
+    [GingerService("MathService", "Math", "Math service")]
     public class MathService 
     {
        

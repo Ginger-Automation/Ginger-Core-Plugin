@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PluginExample3
 {
-    [GingerService("TextFileService", "Text File service")]
+    [GingerService("TextFileService", "Files", "Text File service")]
     public class TextFileService 
     {
         [GingerAction("WordsCount", "Count number of words in text file")]

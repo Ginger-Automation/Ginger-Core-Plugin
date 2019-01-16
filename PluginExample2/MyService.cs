@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace PluginExample
 {
-    [GingerService("MyService", "My Sum and Device service")]
+    [GingerService("MyService", "Math", "My Sum and Devide service")]
     public class MyService 
     {
         //private bool mIsrunning = false;

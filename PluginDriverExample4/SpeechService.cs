@@ -8,7 +8,7 @@ namespace PluginDriverExample4
     // Simple service with stand alone actions
 
 
-    [GingerService("SpeechService", "Speech Service ")]
+    [GingerService("SpeechService", "Speach" ,"Speech Service ")]
     public class SpeechService
     {
         [GingerAction("Say", "Say text")]
