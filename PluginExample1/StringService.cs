@@ -7,11 +7,12 @@ using System.Threading;
 
 namespace PluginExample1
 {
-    [GingerService(Id : "StringService", Group: "Strings" , Description: "String service")]
+    [GingerService(Id : "StringService", Description: "String service")]
+    [GingerServiceCategory("Strings")]
     public class StringService 
     {
        
-        [GingerAction( Id : "Concat", description: "Concat two string")]
+        [GingerAction( Id : "Concat", description: "Concat two string")]        
         public void Concat(IGingerAction GA, string s1, string s2)
         {
             Console.WriteLine(DateTime.Now + "> Concat: " + s1 + "+" + s2);

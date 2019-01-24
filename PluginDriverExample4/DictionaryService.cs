@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PluginExample
 {
-    [GingerService("DictionaryService", "Memeory" , "Dictionary Service ")]
+    [GingerService("DictionaryService", "Dictionary Service ")]
     public class DictionaryService :  IServiceSession
     {
         bool IsRunning = false;

@@ -26,11 +26,22 @@ namespace Amdocs.Ginger.Plugin.Core
         {
             GingerNode gingerNode = new GingerNode(gingerServiceObject);
             gingerNode.StartGingerNode(name, SocketHelper.GetLocalHostIP(), 15001);
-            mNodes.Add(gingerNode);            
+            if (gingerNode.Connected)
+            {
+                mNodes.Add(gingerNode);
+            }
         }
 
         public void Listen()
         {
+            Console.WriteLine(mNodes.Count + " Node(s) Connected succesfully");
+            int i = 0;
+            foreach(GingerNode gingerNode in mNodes)
+            {
+                i++;
+                Console.WriteLine("Node #" + i + " " + gingerNode.Info);
+            }
+
             Console.WriteLine("Press any key to close");
             Console.ReadKey();
         }

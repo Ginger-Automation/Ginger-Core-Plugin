@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PluginExample1
 {
-    [GingerService("LightService", "Iot" , "Light service")]
+    [GingerService("LightService" , "Light service")]
     public class LightService
     {
         public enum ONOFF

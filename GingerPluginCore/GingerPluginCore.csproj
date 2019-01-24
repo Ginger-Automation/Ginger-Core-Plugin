@@ -21,10 +21,4 @@
     </Reference>
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="GingerCoreNET.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>

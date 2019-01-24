@@ -1,4 +1,5 @@
-﻿using Amdocs.Ginger.Plugin.Core;
+﻿using Amdocs.Ginger.CoreNET.Drivers.CommunicationProtocol;
+using Amdocs.Ginger.Plugin.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PluginExample;
 
@@ -7,7 +8,20 @@ namespace GingerPluginCoreTest
     [TestClass]
     public class MyServiceTest
     {
-       
+        [TestMethod]
+        public void runLikeDriver()
+        {
+            //GingerSocketServer2 gingerSocketServer2 = new GingerSocketServer2();
+            //gingerSocketServer2.StartServer(15002);
+            //gingerSocketServer2.MessageHandler += srvmess;
+
+
+            //gingerSocketServer2.SendPayLoad("aaaa", "lplp");
+
+            //GingerNodeStarter gingerNodeStarter = new GingerNodeStarter();
+            //// gingerNodeStarter.StartNode()
+            
+        }
 
         [TestMethod]
         public void StartDriver()

@@ -6,8 +6,7 @@ namespace Amdocs.Ginger.Plugin.Core
 {
     public class GingerServiceAttribute : Attribute
     {
-        string mID;
-        string mGroup;
+        string mID;        
         string mDescription;
 
         /// <summary>
@@ -15,7 +14,7 @@ namespace Amdocs.Ginger.Plugin.Core
         /// </summary>
         /// <param name="Id">Service Id is kept in the XML and should never change</param>
         /// <param name="Description">Description is displayed to the user when he select Service</param>
-        public GingerServiceAttribute(string Id, string Group, string Description)
+        public GingerServiceAttribute(string Id, string Description)
         {
             mID = Id;
             mDescription = Description;

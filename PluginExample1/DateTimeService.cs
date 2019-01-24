@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PluginExample1
 {
-    [GingerService("DateTimeService", "System",  "Date Time service")]
+    [GingerService("DateTimeService", "Date Time service")]
     public class DateTimeService 
     {
         [GingerAction("GetCurrentTime", "Get current system time")]
