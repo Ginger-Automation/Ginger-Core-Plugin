@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GingerPluginCore", "GingerPluginCore\GingerPluginCore.csproj", "{CBE77AD2-A972-4A30-B8DB-75FB6E7CB5E4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GingerPluginCoreTest", "GingerPluginCoreTest\GingerPluginCoreTest.csproj", "{E9BEC6CC-C594-44FE-BC23-5D3B026E465A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginExample2", "PluginExample2\PluginExample2.csproj", "{0DBAF513-4126-4EF0-A4DB-D94D43F98396}"
@@ -15,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginExample1Test", "Plugi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginExample3", "PluginExample3\PluginExample3.csproj", "{D3EC9216-236D-421F-946C-04F8612BF137}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginDriverExample4", "PluginDriverExample4\PluginDriverExample4.csproj", "{B009D043-FDFB-4E46-A6F2-24FBAA2A4522}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginDriverExample4", "PluginDriverExample4\PluginDriverExample4.csproj", "{B009D043-FDFB-4E46-A6F2-24FBAA2A4522}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CBE77AD2-A972-4A30-B8DB-75FB6E7CB5E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBE77AD2-A972-4A30-B8DB-75FB6E7CB5E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBE77AD2-A972-4A30-B8DB-75FB6E7CB5E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBE77AD2-A972-4A30-B8DB-75FB6E7CB5E4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E9BEC6CC-C594-44FE-BC23-5D3B026E465A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E9BEC6CC-C594-44FE-BC23-5D3B026E465A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9BEC6CC-C594-44FE-BC23-5D3B026E465A}.Release|Any CPU.ActiveCfg = Release|Any CPU
