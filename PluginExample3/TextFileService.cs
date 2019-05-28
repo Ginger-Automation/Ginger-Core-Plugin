@@ -8,7 +8,7 @@ namespace PluginExample3
     [GingerService("TextFileService", "Text File service")]
     public class TextFileService 
     {
-        [GingerAction("WordsCount", "Count number of words in text file")]
+        [GingerAction(Id : "WordsCount", description: "Count number of words in text file")]
         public void WordsCount(IGingerAction GA, string fileName)
         {            
             //In

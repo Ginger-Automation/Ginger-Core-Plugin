@@ -18,11 +18,13 @@ namespace PluginExample1
                 }
                 else
                 {
+                    // gingerNodeStarter.StartNode("String Service", new StringService());
                     // gingerNodeStarter.StartNode("Math Service A", new MathService(), "10.122.112.124", 15001);
                     //gingerNodeStarter.StartNode("Math Service A", new MathService());
                     //gingerNodeStarter.StartNode("Math Service B", new MathService());
                     //gingerNodeStarter.StartNode("Math Service C", new MathService());
 
+                    // gingerNodeStarter.StartNode("String Service", new StringService(), "172.30.80.1", 15001);
                     gingerNodeStarter.StartNode("String Service", new StringService());
 
                     // file content options

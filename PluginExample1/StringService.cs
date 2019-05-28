@@ -83,5 +83,18 @@ namespace PluginExample1
             GA.AddOutput("txt", txt);
         }
 
+        // sample action with enum
+        [GingerAction("Contains", "Check if string contain another string")]
+        public void Contains(IGingerAction GA, string str1, string search, StringComparison stringComparison)
+        {
+            //In
+
+            //Act
+            bool b = str1.Contains(search, stringComparison);
+
+            //Out
+            GA.AddOutput("Contains", b);
+        }
+
     }
 }
