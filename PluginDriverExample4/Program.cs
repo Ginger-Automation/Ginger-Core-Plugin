@@ -13,7 +13,7 @@ namespace PluginDriverExample4
             // Not working on Linux
             // Console.BufferHeight = 100;
 
-            Console.WriteLine("Starting Plugin Driver Exmaple 4");
+            Console.WriteLine("Starting Plugin Driver Example 4");
             using (GingerNodeStarter gingerNodeStarter = new GingerNodeStarter())
             {
                 gingerNodeStarter.StartNode("Dictionary Service 1", new DictionaryService());
