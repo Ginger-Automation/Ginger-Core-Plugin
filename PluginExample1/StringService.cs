@@ -12,7 +12,7 @@ namespace PluginExample1
     public class StringService 
     {
        
-        [GingerAction( Id : "Concat", description: "Concat two string")]        
+        [GingerAction( Id : "Concat", description: "Concat two strings")]        
         public void Concat(IGingerAction GA, string s1, string s2)
         {
             Console.WriteLine(DateTime.Now + "> Concat: " + s1 + "+" + s2);
