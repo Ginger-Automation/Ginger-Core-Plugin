@@ -10,19 +10,21 @@ namespace PluginDriverExample4
         {
             Console.Title = "PluginDriverExample4";
 
-            // Not working on Linux
-            // Console.BufferHeight = 100;
-
             Console.WriteLine("Starting Plugin Driver Example 4");
+
             using (GingerNodeStarter gingerNodeStarter = new GingerNodeStarter())
             {
-                gingerNodeStarter.StartNode("Dictionary Service 1", new DictionaryService());
-                gingerNodeStarter.StartNode("Speech Service 1", new SpeechService());
-
-                gingerNodeStarter.Listen();                
+                if (args.Length > 0)
+                {
+                    gingerNodeStarter.StartFromConfigFile(args[0]);  // file name 
+                }
+                else
+                {
+                    gingerNodeStarter.StartNode("Dictionary Service 1", new DictionaryService());
+                    gingerNodeStarter.StartNode("Speech Service 1", new SpeechService());
+                }
+                gingerNodeStarter.Listen();
             }
-                
-            
         }
     }
 }
