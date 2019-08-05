@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace PluginExample
 {
-    // Sample implemntation of ITextEditor for unit tests
+    // Sample implementation of ITextEditor for unit tests
     public class MyTextEditor : ITextEditor
     {
         // to test the tool 'Save' worked - check Execute
